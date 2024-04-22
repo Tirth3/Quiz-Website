@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Quizathon</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="card col" style="width: 18rem;">
+            <img src="{{ url_for('static' , filename='image1.png') }}" class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <h5 class="card-title">Fun Fact!</h5>
+                <p class="card-text">As founder Bruce McLaren was from New Zealand, the first logo for McLaren Motor
+                    Racing
+                    featured a kiwi bird. This was designed by artist Michael Turner in 1964, though was increasingly
+                    streamlined in later redesigns as McLaren grew bigger on the global stage until it eventually became
+                    the
+                    one we are familiar with today</p>
+            </div>
+        </div>
+        <div class="card col" style="width: 18rem;">
+            <img src="{{ url_for('static' , filename='image2.jpg') }}" class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <h5 class="card-title">Fun Fact!</h5>
+                <p class="card-text">The Olympic rings represent all participating nations. At least one of five colours
+                    of the rings are found on every flag of the participating nations!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">SNO.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Time</th>
+                <th scope="col">Last Date</th>
+                <th scope="col">Start Quiz</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if allquizes|length == 0 %}
+            NO QUIZ
+            {% endif %}
+            {% for quiz in allquizes %}
+            <tr class="table-primary">
+                <th scope="row">{{loop.index}}</th>
+                <td>{{quiz.name}}</td>
+                <td>{{quiz.time}}</td>
+                <td>{{quiz.last_date}}</td>
+                <td><a href="/Start/{{quiz.sno}}" type="button" class="btn btn-outline-primary">START</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock body %}

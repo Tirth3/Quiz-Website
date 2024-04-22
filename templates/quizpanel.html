@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>All quizes</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">SNO.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Time</th>
+                <th scope="col">Last Date</th>
+                <th scope="col">Start Quiz</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if allquizes|length == 0 %}
+            NO QUIZ
+            {% endif %}
+            {% for quiz in allquizes %}
+            <tr class="table-danger">
+                <th scope="row">{{loop.index}}</th>
+                <td>{{quiz.name}}</td>
+                <td>{{quiz.time}}</td>
+                <td>{{quiz.last_date}}</td>
+                <td><a href="/Start/{{quiz.sno}}" type="button" class="btn btn-outline-primary">START</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

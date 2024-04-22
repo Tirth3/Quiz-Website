@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Manage quizes</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">SNO.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Time</th>
+                <th scope="col">Last Date</th>
+                <th scope="col">Start Quiz</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if allquizes|length == 0 %}
+            <div class="alert alert-primary" role="alert">NO QUIZES FOUND ADD A NEW QUIZ THROUGH ADD QUIZ MENU</div>
+            {% else %}
+            {% for quiz in allquizes %}
+            <tr class="table-warning">
+                <th scope="row">{{loop.index}}</th>
+                <td>{{quiz.name}}</td>
+                <td>{{quiz.time}}</td>
+                <td>{{quiz.last_date}}</td>
+                <td>
+                    <a href="/Delete/{{quiz.sno}}" type="button" class="btn btn-outline-danger">DELETE</button>
+                        <a href="#" type="button" class="btn btn-outline-info">UPDATE</button>
+                </td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock body %}
