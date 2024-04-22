@@ -4,16 +4,18 @@ This Online Quiz Website is designed to provide users with an engaging platform 
 
 #Installation
 1. Clone the repositiory 
-   `git clone https://github.com/Tirth3/Quiz-Website.git`
+   ```git clone https://github.com/Tirth3/Quiz-Website.git```
 
 2. CD into Quiz-Website
-     `cd Quiz-Website`
+     ```cd Quiz-Website```
 
 3. Create and activate virtual environment
-   `python -m venv env
-    env/Scripts/activate.bat`
+   ```
+   python -m venv env
+   env/Scripts/activate.bat
+   ```
    Run following command in powershell in the project folder
-   `env/Scripts/Activate.ps1`
+   ```env/Scripts/Activate.ps1```
 
-4. Run the python script
-   `python app.py`
+5. Run the python script
+   ```python app.py```
