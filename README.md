@@ -17,5 +17,8 @@ This Online Quiz Website is designed to provide users with an engaging platform 
    Run following command in powershell in the project folder
    ```env/Scripts/Activate.ps1```
 
+4. Install the requirements
+   ``` pip install -r requirements.txt```
+
 5. Run the python script
    ```python app.py```
