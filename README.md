@@ -23,4 +23,4 @@ This Online Quiz Website is designed to provide users with an engaging platform 
 5. Run the python script
    ```python app.py```
 
-Remember it is an learning project
+it is an learning project
